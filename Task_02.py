@@ -4,4 +4,4 @@ rectangle_area = side_a * side_b
 
 print("Side a:", side_a)
 print("Side b:", side_b)
-print("Rectangle area:", rectangle_area)
+print("Rectangle area:", rectangle_area,".")
