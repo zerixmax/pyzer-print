@@ -1,0 +1,15 @@
+# Unos cijele IP adrese u jednom potezu
+ip = input('Unesi IP adresu (npr. 192.168.0.184): ')
+
+# Razdvajanje u četiri dijela i pretvaranje u int
+a, b, c, d = [int(x) for x in ip.split('.')]
+
+# Definicija brojevnih zapisa pomoću f-stringa
+binary = f'{bin(a)[2:]}.{bin(b)[2:]}.{bin(c)[2:]}.{bin(d)[2:]}'
+octal = f'{oct(a)[2:]}.{oct(b)[2:]}.{oct(c)[2:]}.{oct(d)[2:]}'
+hexadecimal = f'{hex(a)[2:]}.{hex(b)[2:]}.{hex(c)[2:]}.{hex(d)[2:]}'
+
+# Ispis rezultata
+print('Binarni zapis:', binary)
+print('Oktalni zapis:', octal)
+print('Hex zapis:', hexadecimal)
