@@ -1,7 +1,6 @@
-# Zadatak 1: Automobil trošak (direktno u eurima)
 potrosnja_l_100km = 5.3     # litara na 100 km
-cijena_goriva_eur_l = 1.27  # cijena goriva po litri u EUR (npr. 1.27 EUR/l)
-udaljenost_posao_km = 20
+cijena_goriva_eur_l = 1.27  # cijena goriva u EUR po litri
+udaljenost_posao_km = 20 # udaljenost do posla u km (jedan smjer)
 dani_mjesecno = 30
 
 potrosnja_po_km = potrosnja_l_100km / 100
@@ -16,7 +15,7 @@ print(f"Trošak po kilometru: {trosak_po_km:.2f} EUR/km")
 print(f"Mjesečni trošak goriva: {trosak_mjesecno:.2f} EUR")
 
 # Zadatak 2: Jednostavna kamata (direktno u eurima)
-glavnica_eur = 1327         # glavnica u EUR (npr. 1.327 EUR/10 kn)
+glavnica_eur = 1327        # početni iznos u eurima
 kamata_postotak = 2.5
 vrijeme_godine = 15
 
