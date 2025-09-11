@@ -1,4 +1,4 @@
-
+print()
 import random
 
 # Lista mogućih jezika
@@ -20,7 +20,7 @@ while True:
         break  # prekida petlju - igra je gotova
     else:
         print('Nažalost niste pogodili! Pokušajte ponovno.')
-
+        print(f'Ovo vam je pokušaj broj: {brojac}')
     # Daje korisniku mogućnost da odustane
     next_round = input('Želite li nastaviti? (Da/Ne): ')
     if next_round.strip().lower() == 'ne':  # pametno usporediti s malim slovima, i maknuti višak razmaka
