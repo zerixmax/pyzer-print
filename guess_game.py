@@ -1,9 +1,10 @@
-print()
+
 import random
+
+print()
 
 # Lista mogućih jezika
 languages = ['Python', 'Java', 'C#', 'Javascript', 'Typescript', 'Golang', 'Rust', 'Lua']
-
 # Nasumično odabire indeks jezika iz liste
 selected_language_index = random.randint(0, len(languages)-1)
 # selected_language = languages[selected_language_index]  # možete koristiti i ovako, radi preglednosti
