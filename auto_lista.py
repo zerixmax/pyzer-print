@@ -3,6 +3,26 @@
 # +-+-+-+-+-+-+
 # Program za upravljanje bazom podataka vozila
 # Autor: Ivo Cetinic
+import json
+
+# Spremi bazu vozila u datoteku
+def spremi_bazu(baza, filename="vozila.json"):
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(baza, f, ensure_ascii=False, indent=4)
+
+# Učitaj bazu vozila iz datoteke
+def ucitaj_bazu(filename="vozila.json"):
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            baza = json.load(f)
+            # JSON ključeve (string) pretvaramo natrag u brojeve (int)
+            return {int(k): v for k, v in baza.items()}
+    except (FileNotFoundError, json.JSONDecodeError):
+        return napravi_bazu_vozila()
+# Glavni program
+BOLD = '\033[1m'
+END = '\033[0m'
+
 print("PyZ3R - Program za upravljanje bazom podataka vozila")
 print()
 
@@ -84,7 +104,9 @@ def unos_novog_vozila():
 
 def dodaj_vozilo(baza, tip, marka, model, registracija, godina, cijena):
     """Dodaje novo vozilo u bazu podataka."""
-    novo_id = max(baza.keys()) + 1 if baza else 1
+    # Ispravno računanje novog ID-a, bez obzira jesu li ključevi stringovi ili integeri
+    # Pretvaramo sve ključeve u int prije traženja maksimuma
+    novo_id = max(int(k) for k in baza.keys()) + 1 if baza else 1
     baza[novo_id] = {
         'tip': tip,
         'marka': marka,
@@ -97,7 +119,7 @@ def dodaj_vozilo(baza, tip, marka, model, registracija, godina, cijena):
     print()
 
 if __name__ == "__main__":
-    baza_vozila = napravi_bazu_vozila()
+    baza_vozila = ucitaj_bazu()
     print("--- Trenutni inventar vozila ---")
     ispis_vozila(baza_vozila)
     print()
@@ -106,6 +128,7 @@ if __name__ == "__main__":
     if unos == "da":
         tip, marka, model, registracija, godina, cijena = unos_novog_vozila()
         dodaj_vozilo(baza_vozila, tip, marka, model, registracija, godina, cijena)
+        spremi_bazu(baza_vozila) # Spremi promjene u datoteku
         print("\n--- Ažurirani inventar vozila ---")
         print()
         ispis_vozila(baza_vozila)
