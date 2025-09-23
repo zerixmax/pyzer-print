@@ -20,8 +20,6 @@ def ucitaj_bazu(filename="vozila.json"):
     except (FileNotFoundError, json.JSONDecodeError):
         return napravi_bazu_vozila()
 # Glavni program
-BOLD = '\033[1m'
-END = '\033[0m'
 
 print("PyZ3R - Program za upravljanje bazom podataka vozila")
 print()
