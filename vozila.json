@@ -1,0 +1,50 @@
+{
+    "1": {
+        "tip": "MPV",
+        "model": "Partner Tepee",
+        "marka": "Peugeot",
+        "registracija": "DU 283 KN",
+        "godina": 2010,
+        "cijena": 6500
+    },
+    "2": {
+        "tip": "hatchback",
+        "marka": "Renault",
+        "model": "Clio",
+        "registracija": "DU 951 DK",
+        "godina": 2006,
+        "cijena": 1500
+    },
+    "3": {
+        "tip": "limuzina",
+        "marka": "Audi",
+        "model": "A4",
+        "registracija": "DU 696 KB",
+        "godina": 2012,
+        "cijena": 5500
+    },
+    "4": {
+        "tip": "hatchback",
+        "marka": "Renault",
+        "model": "4 GTL",
+        "registracija": "DU 751 BC",
+        "godina": 1988,
+        "cijena": 3500
+    },
+    "5": {
+        "tip": "MPV",
+        "marka": "Peugeot",
+        "model": "Rifter",
+        "registracija": "DU Z3R 1X",
+        "godina": 2020,
+        "cijena": 10500
+    },
+    "6": {
+        "tip": "MPV",
+        "marka": "WolksWagen",
+        "model": "Caddy",
+        "registracija": "DU767HG",
+        "godina": 2025,
+        "cijena": 27000
+    }
+}
