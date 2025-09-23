@@ -180,3 +180,4 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 DZ_TAblica_mnozenja.py
+DZ_Vozila.py
