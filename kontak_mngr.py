@@ -1,3 +1,8 @@
+# ░█▀█░█░█░▀▀█░▀▀█░█▀▄
+# ░█▀▀░░█░░▄▀░░░▀▄░█▀▄
+# ░▀░░░░▀░░▀▀▀░▀▀░░▀░▀
+
+import os
 #region MODELI
 kontakti = {} # key: id, value: kontakt dict
 firme = {}   # key: id, value: firma dict
@@ -64,6 +69,7 @@ def azuriraj_kontakt(id, first_name = None, last_name = None, phone = None, emai
 
 #region Main
 if __name__  ==  '__main__':#dodaj par testnih firmi  i kontakata
+    os.system('cls')
     dodaj_firmu(1, 'Firma A', '12345678901')
     dodaj_firmu(2, 'Firma B', '98765432101')
     dodaj_kontakt(1, 'Pero', 'Peric', '0912345678', 'pero.peric@example.com', 1)
