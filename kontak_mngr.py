@@ -5,15 +5,16 @@ firme = {}   # key: id, value: firma dict
 #endregion
 
 #region FUNKCIJE
-def dodaj_firmu (id,name,tax_id:
+def dodaj_firmu(id, name, tax_id):
     firma = {
         'id': id,
         'name': name,
-        'tax_id': tax_id
+        'tax_id': tax_id,
+        'contacts': []  # Inicijaliziraj listu kontakata za firmu
     }
     firme[id] = firma
 
-def dodaj_kontakt (id, first_name, last_name = '', phone = '', email = '', company_id = None):
+def dodaj_kontakt(id, first_name, last_name = '', phone = '', email = '', company_id = None):
     kontakt = {
         'id': id,
         'first_name': first_name,
@@ -22,11 +23,11 @@ def dodaj_kontakt (id, first_name, last_name = '', phone = '', email = '', compa
         'email': email,
         'company_id': company_id
     }
-    kontakti[id] = kontakt     
-    if firma_id in firme:
+    kontakti[id] = kontakt
+    if company_id in firme:
         firme[company_id]['contacts'].append(id)
     
-def ispisi_kontakt(kontakt_id):
+def prikaz_svih_kontakata():
     print("Svi kontakti:")
     for k  in kontakti.values():
         print(f"{k['id']}: {k['first_name']} {k['last_name']} - {k['phone']} - {k['email']} (Firma ID: {k['company_id']})")
@@ -62,13 +63,13 @@ def azuriraj_kontakt(id, first_name = None, last_name = None, phone = None, emai
 #endregion
 
 #region Main
-if__name__  ==  '__main__':#dodaj par testnih firmi  i kontakata
+if __name__  ==  '__main__':#dodaj par testnih firmi  i kontakata
     dodaj_firmu(1, 'Firma A', '12345678901')
     dodaj_firmu(2, 'Firma B', '98765432101')
     dodaj_kontakt(1, 'Pero', 'Peric', '0912345678', 'pero.peric@example.com', 1)
     dodaj_kontakt(2, 'Ana', 'Anic', '0987654321', 'ana.anic@example.com', 1)        
 
-    prikaz_svih_kontakata()
+    prikaz_svih_kontakata() # Ispravljen poziv funkcije
     print("\n--------------------\n")
     prikaz_kontakata_jedne_firme(1)
     print("\n--------------------\n")
